@@ -8,6 +8,7 @@ const Discover = () => {
 
   if (isFetching) return <Loader title="Songs Loading..." />;
   if (error) return <Error />;
+  console.log(data);
 
   return (
     <div className="flex flex-col">
@@ -23,7 +24,7 @@ const Discover = () => {
       </div>
 
       <div className="flex flex-warp sm:justify-start justify-center gap-8">
-        {data?.map((song, i) => (
+        {data.countries?.map((song, i) => (
           <SongCard
             key={song.key}
             song={song}
